@@ -1,0 +1,45 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "iustin24",
+      "name": "iustin24",
+      "avatar_url": "https://avatars.githubusercontent.com/u/62765470?v=4",
+      "profile": "https://github.com/iustin24",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "andreademurtas",
+      "name": "andreademurtas",
+      "avatar_url": "https://avatars.githubusercontent.com/u/56048157?v=4",
+      "profile": "https://github.com/andreademurtas",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "mgr0dzicki",
+      "name": "Mieszko Grodzicki",
+      "avatar_url": "https://avatars.githubusercontent.com/u/29335183?v=4",
+      "profile": "https://github.com/mgr0dzicki",
+      "contributions": [
+        "code",
+        "infra"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "feroxfuzz",
+  "projectOwner": "epi052",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true,
+  "commitType": "docs",
+  "commitConvention": "angular"
+}

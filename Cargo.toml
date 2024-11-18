@@ -1,0 +1,51 @@
+[package]
+name = "feroxfuzz"
+version = "1.0.0-rc.12"
+edition = "2021"
+authors = ["Ben 'epi' Risher (@epi052)"]
+license = "Apache-2.0"
+repository = "https://github.com/epi052/feroxfuzz"
+categories = ["development-tools::testing"]
+keywords = ["fuzzing", "testing", "security", "web"]
+readme = "README.md"
+description = "Structure-aware, black box HTTP fuzzing library"
+
+[features]
+default = ["async", "json"]
+
+# AsyncResponse et al will [de]serialize the response body in addition to normal fields
+serialize-body = ["serde", "typetag"]
+
+# AsyncResponse et al can attempt to convert the response body to json, also needed for
+# libafl Input trait
+json = ["serde", "serde_json", "typetag"]
+
+# wrapper around providing concrete async implementations via reqwest, tokio, and futures 
+async = ["reqwest", "tokio", "futures"]
+
+# wrapper around providing concrete serial implementations via reqwest 
+blocking = ["reqwest/blocking"]
+
+# wrapper around providing different encoders
+encoders = ["base64", "hex"]
+
+# wrapper around providing havoc mutations
+havoc = ["libafl", "libafl_bolts"]
+
+[dependencies]
+
+[dev-dependencies]
+http = { version = "0.2" }
+tokio-test = { version = "0.4" }
+httpmock = { version = "0.6" }
+allocation-counter = { version = "0.5" }
+tempdir = { version = "0.3.7" }
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+
+# docs.rs-specific configuration
+[package.metadata.docs.rs]
+# document all features
+all-features = true
+
+# defines the configuration attribute `docsrs`
+rustdoc-args = ["--cfg", "docsrs"]
